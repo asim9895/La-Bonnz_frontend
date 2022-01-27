@@ -1,20 +1,39 @@
 import { StatusBar } from 'expo-status-bar';
-import { StyleSheet, Text, View } from 'react-native';
+import React from 'react';
+import {
+	Nunito_400Regular,
+	Nunito_800ExtraBold,
+	Nunito_600SemiBold,
+	useFonts,
+} from '@expo-google-fonts/nunito';
+import AppLoading from 'expo-app-loading';
+import { ToastProvider } from 'react-native-toast-notifications';
+import Routes from './routes/Routes';
+import { PersistGate } from 'redux-persist/integration/react';
+import { Provider } from 'react-redux';
+import { store, persistor } from './redux/store';
 
-export default function App() {
-  return (
-    <View style={styles.container}>
-      <Text>Open up App.js to start working on your app!</Text>
-      <StatusBar style="auto" />
-    </View>
-  );
-}
+const App = () => {
+	let [fontsLoaded] = useFonts({
+		Nunito_400Regular,
+		Nunito_800ExtraBold,
+		Nunito_600SemiBold,
+	});
 
-const styles = StyleSheet.create({
-  container: {
-    flex: 1,
-    backgroundColor: '#fff',
-    alignItems: 'center',
-    justifyContent: 'center',
-  },
-});
+	if (!fontsLoaded) {
+		return <AppLoading />;
+	} else {
+		return (
+			<Provider store={store}>
+				{/* <PersistGate loading={null} persistor={persistor}> */}
+				<ToastProvider>
+					<StatusBar style='light' />
+					<Routes />
+				</ToastProvider>
+				{/* </PersistGate> */}
+			</Provider>
+		);
+	}
+};
+
+export default App;
