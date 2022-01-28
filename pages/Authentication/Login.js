@@ -11,25 +11,31 @@ import COLORS from '../../themes/theme';
 import { Entypo, AntDesign } from '@expo/vector-icons';
 import { Formik } from 'formik';
 import { useToast } from 'react-native-toast-notifications';
-import { login_user } from '../../redux/actions/userActions';
+import { login_user, save_user } from '../../redux/actions/userActions';
 import AsyncStorage from '@react-native-async-storage/async-storage';
 // import { Bubbles } from 'react-native-loader';
+import AppLoading from 'expo-app-loading';
+import { useDispatch } from 'react-redux';
 
 const Login = ({ navigation }) => {
 	const [loading, setloading] = useState(false);
 	const toast = useToast();
+	const dispatch = useDispatch();
 
 	useEffect(async () => {
 		console.log(await AsyncStorage.getItem('token'));
+		console.log(await AsyncStorage.getItem('user_id'));
 	}, []);
 
 	const submitLoginForm = async (values) => {
 		setloading(true);
 
 		const user_data = await login_user(values);
+		console.log(user_data?.data?.user);
 
 		if (user_data.status === 200) {
-			await AsyncStorage.setItem('token', user_data.data);
+			await AsyncStorage.setItem('token', user_data?.data?.token);
+			await AsyncStorage.setItem('user_id', user_data?.data?.user._id);
 			toast.show(`Login Successful`, {
 				type: 'success',
 				placement: 'top',
@@ -54,6 +60,7 @@ const Login = ({ navigation }) => {
 		<View style={{ backgroundColor: COLORS.background, flex: 1 }}>
 			<ScrollView showsVerticalScrollIndicator={false}>
 				<View style={{ marginHorizontal: 20, marginTop: 60 }}>
+					{loading && <AppLoading />}
 					<Formik
 						initialValues={{ username: '', password: '' }}
 						onSubmit={(values) => submitLoginForm(values)}
@@ -121,7 +128,7 @@ const Login = ({ navigation }) => {
 										</View>
 									</TouchableOpacity>
 								</View>
-								<TouchableOpacity onPress={handleSubmit}>
+								<TouchableOpacity onPress={handleSubmit} activeOpacity={0.8}>
 									<View
 										style={{
 											backgroundColor: COLORS.primary,
@@ -141,7 +148,7 @@ const Login = ({ navigation }) => {
 												fontSize: 19,
 											}}
 										>
-											{loading ? 'Loading...' : 'Login'}
+											Login
 										</Text>
 									</View>
 								</TouchableOpacity>
@@ -193,7 +200,7 @@ const styles = StyleSheet.create({
 		marginTop: 20,
 		padding: 15,
 		alignItems: 'center',
-		borderRadius: 1,
+		borderRadius: 10,
 		backgroundColor: COLORS.dark,
 	},
 	inputIcon: {

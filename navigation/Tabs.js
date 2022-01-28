@@ -29,35 +29,7 @@ const Tabs = () => {
 				name='Home'
 				component={Home}
 				options={({ navigation }) => ({
-					headerShown: true,
-					headerStyle: {
-						elevation: 0,
-						backgroundColor: COLORS.background,
-					},
-					headerTitle: 'Shop',
-					headerTitleStyle: {
-						fontFamily: 'Nunito_800ExtraBold',
-						color: COLORS.white,
-					},
-
-					headerTitleAlign: 'center',
-					// headerRight: () => (
-					// 	<TouchableOpacity
-					// 		onPress={() => navigation.navigate('MarketSearch')}
-					// 	>
-					// 		<AntDesign
-					// 			name='home'
-					// 			size={25}
-					// 			color={COLORS.white}
-					// 			style={{
-					// 				backgroundColor: COLORS.light_blue,
-					// 				padding: 8,
-					// 				marginRight: 10,
-					// 				borderRadius: 10,
-					// 			}}
-					// 		/>
-					// 	</TouchableOpacity>
-					// ),
+					headerShown: false,
 
 					tabBarIcon: ({ focused }) => (
 						<View
@@ -72,15 +44,6 @@ const Tabs = () => {
 								color='black'
 								style={{ color: focused ? COLORS.white : '#555763' }}
 							/>
-							{/* <Text
-								style={{
-									color: focused ? COLORS.white : COLORS.gray,
-									fontSize: 12,
-									fontFamily: 'Nunito_600SemiBold',
-								}}
-							>
-								Home
-							</Text> */}
 						</View>
 					),
 				})}
@@ -90,31 +53,8 @@ const Tabs = () => {
 				name='Shop'
 				component={Shop}
 				options={({ navigation }) => ({
-					headerShown: true,
-					headerStyle: {
-						elevation: 0,
-						backgroundColor: COLORS.background,
-					},
-					headerTitle: 'Shop',
-					headerTitleStyle: {
-						fontFamily: 'Nunito_800ExtraBold',
-						color: COLORS.white,
-					},
-					headerTitleAlign: 'center',
-					headerRight: () => (
-						<TouchableOpacity onPress={() => navigation.navigate('UserSearch')}>
-							<AntDesign
-								name='search1'
-								size={20}
-								color={COLORS.white}
-								style={{
-									padding: 8,
-									marginRight: 10,
-									borderRadius: 15,
-								}}
-							/>
-						</TouchableOpacity>
-					),
+					headerShown: false,
+
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
@@ -128,15 +68,6 @@ const Tabs = () => {
 								color='black'
 								style={{ color: focused ? COLORS.white : '#555763' }}
 							/>
-							{/* <Text
-								style={{
-									color: focused ? COLORS.white : '#555763',
-									fontSize: 12,
-									fontFamily: 'Nunito_600SemiBold',
-								}}
-							>
-								Shop
-							</Text> */}
 						</View>
 					),
 				})}
@@ -146,31 +77,8 @@ const Tabs = () => {
 				name='Bag'
 				component={Cart}
 				options={({ navigation }) => ({
-					headerShown: true,
-					headerStyle: {
-						elevation: 0,
-						backgroundColor: COLORS.background,
-					},
-					headerTitle: 'My Bag',
-					headerTitleStyle: {
-						fontFamily: 'Nunito_800ExtraBold',
-						color: COLORS.white,
-					},
-					headerTitleAlign: 'center',
-					headerRight: () => (
-						<TouchableOpacity onPress={() => navigation.navigate('UserSearch')}>
-							<AntDesign
-								name='search1'
-								size={20}
-								color={COLORS.white}
-								style={{
-									padding: 8,
-									marginRight: 10,
-									borderRadius: 15,
-								}}
-							/>
-						</TouchableOpacity>
-					),
+					headerShown: false,
+
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
@@ -184,15 +92,6 @@ const Tabs = () => {
 								color='black'
 								style={{ color: focused ? COLORS.white : '#555763' }}
 							/>
-							{/* <Text
-								style={{
-									color: focused ? COLORS.white : '#555763',
-									fontSize: 12,
-									fontFamily: 'Nunito_600SemiBold',
-								}}
-							>
-								Bag
-							</Text> */}
 						</View>
 					),
 				})}
@@ -201,31 +100,8 @@ const Tabs = () => {
 				name='Favourites'
 				component={Favourites}
 				options={({ navigation }) => ({
-					headerShown: true,
-					headerStyle: {
-						elevation: 0,
-						backgroundColor: COLORS.background,
-					},
-					headerTitle: 'Favourites',
-					headerTitleStyle: {
-						fontFamily: 'Nunito_800ExtraBold',
-						color: COLORS.white,
-					},
-					headerTitleAlign: 'center',
-					headerRight: () => (
-						<TouchableOpacity onPress={() => navigation.navigate('UserSearch')}>
-							<AntDesign
-								name='search1'
-								size={20}
-								color={COLORS.white}
-								style={{
-									padding: 8,
-									marginRight: 10,
-									borderRadius: 15,
-								}}
-							/>
-						</TouchableOpacity>
-					),
+					headerShown: false,
+
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
@@ -239,15 +115,6 @@ const Tabs = () => {
 								color='black'
 								style={{ color: focused ? COLORS.white : '#555763' }}
 							/>
-							{/* <Text
-								style={{
-									color: focused ? COLORS.white : '#555763',
-									fontSize: 12,
-									fontFamily: 'Nunito_600SemiBold',
-								}}
-							>
-								Favourites
-							</Text> */}
 						</View>
 					),
 				})}
@@ -256,31 +123,8 @@ const Tabs = () => {
 				name='Profile'
 				component={Profile}
 				options={({ navigation }) => ({
-					headerShown: true,
-					headerStyle: {
-						elevation: 0,
-						backgroundColor: COLORS.background,
-					},
-					headerTitle: 'Profile',
-					headerTitleStyle: {
-						fontFamily: 'Nunito_800ExtraBold',
-						color: COLORS.white,
-					},
-					headerTitleAlign: 'center',
-					headerRight: () => (
-						<TouchableOpacity onPress={() => navigation.navigate('UserSearch')}>
-							<AntDesign
-								name='search1'
-								size={20}
-								color={COLORS.white}
-								style={{
-									padding: 8,
-									marginRight: 10,
-									borderRadius: 15,
-								}}
-							/>
-						</TouchableOpacity>
-					),
+					headerShown: false,
+
 					tabBarIcon: ({ focused }) => (
 						<View
 							style={{
@@ -294,15 +138,6 @@ const Tabs = () => {
 								color='black'
 								style={{ color: focused ? COLORS.white : '#555763' }}
 							/>
-							{/* <Text
-								style={{
-									color: focused ? COLORS.white : '#555763',
-									fontSize: 12,
-									fontFamily: 'Nunito_600SemiBold',
-								}}
-							>
-								Profile
-							</Text> */}
 						</View>
 					),
 				})}
