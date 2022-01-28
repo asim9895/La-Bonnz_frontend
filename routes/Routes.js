@@ -26,10 +26,16 @@ const Routes = () => {
 	return (
 		<NavigationContainer>
 			<Stack.Navigator screenOptions={{ headerShown: false }}>
-				{token ? (
-					<Stack.Screen name='Login' component={Login} />
+				{token !== null ? (
+					<>
+						<Stack.Screen name='Main' component={Main} />
+						<Stack.Screen name='Login' component={Login} />
+					</>
 				) : (
-					<Stack.Screen name='Main' component={Main} />
+					<>
+						<Stack.Screen name='Login' component={Login} />
+						<Stack.Screen name='Main' component={Main} />
+					</>
 				)}
 				<Stack.Screen name='Register' component={Register} />
 				<Stack.Screen name='Shop' component={Shop} />
