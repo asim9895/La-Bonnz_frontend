@@ -21,8 +21,8 @@ const Profile = ({ navigation }) => {
 	let token;
 
 	const onLogout = async () => {
-		await AsyncStorage.removeItem('token');
-		await AsyncStorage.removeItem('user_id');
+		await AsyncStorage.setItem('token', null);
+		await AsyncStorage.setItem('user_id', null);
 		if (!token) {
 			navigation.navigate('Login');
 		}
