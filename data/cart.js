@@ -7,6 +7,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: false,
 	},
 	{
 		id: '2',
@@ -16,6 +17,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: true,
 	},
 	{
 		id: '3',
@@ -25,6 +27,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: true,
 	},
 	{
 		id: '4',
@@ -34,6 +37,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: false,
 	},
 	{
 		id: '5',
@@ -43,6 +47,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: true,
 	},
 	{
 		id: '6',
@@ -52,6 +57,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: false,
 	},
 	{
 		id: '7',
@@ -61,6 +67,7 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: true,
 	},
 	{
 		id: '8',
@@ -70,5 +77,6 @@ export const cart = [
 		color: 'black',
 		size: 'L',
 		price: 12,
+		favourite: true,
 	},
 ];

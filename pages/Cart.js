@@ -10,7 +10,12 @@ import {
 import React, { useState } from 'react';
 import COLORS from '../themes/theme';
 import { cart } from '../data/cart';
-import { AntDesign, Entypo, SimpleLineIcons } from '@expo/vector-icons';
+import {
+	AntDesign,
+	Entypo,
+	Ionicons,
+	SimpleLineIcons,
+} from '@expo/vector-icons';
 import CheckoutModel from '../components/CheckoutModel';
 import PromocodeModel from '../components/PromocodeModel';
 
@@ -65,7 +70,7 @@ const Cart = () => {
 				</Text>
 			</View>
 
-			<View style={{ marginTop: 90, marginBottom: 60 }}>
+			<View style={{ marginTop: 80, marginBottom: 60 }}>
 				<View
 					style={{
 						borderWidth: 1,
@@ -319,16 +324,36 @@ const Cart = () => {
 										marginRight: 5,
 									}}
 								>
-									<Entypo
-										name='dots-three-vertical'
-										size={19}
+									<View
 										style={{
-											color: COLORS.gray,
-											textAlign: 'center',
+											flexDirection: 'row',
+											marginLeft: -5,
 										}}
-										onPress={() => setcart_price(cart_price + 1)}
-									/>
+									>
+										<Ionicons
+											name={item?.favourite ? 'bookmark' : 'bookmark-outline'}
+											size={19}
+											style={{
+												color: `${
+													item?.favourite ? COLORS.success : COLORS.gray
+												}`,
+												textAlign: 'center',
+												marginLeft: -10,
+											}}
+											onPress={() => setcart_price(cart_price + 1)}
+										/>
 
+										<Entypo
+											name='cross'
+											size={22}
+											style={{
+												color: COLORS.gray,
+												textAlign: 'center',
+												marginLeft: 10,
+											}}
+											onPress={() => setcart_price(cart_price + 1)}
+										/>
+									</View>
 									<Text
 										style={{
 											color: COLORS.text,
